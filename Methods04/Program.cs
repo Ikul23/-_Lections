@@ -1,7 +1,15 @@
 ﻿// Задача: найти позицию минимального элемента в неотсортированной части массива 
 //и отсортировать массив по возрастанию
 
-int [] arr = {1, 4, 6, 9, 1, 5, 9, 8 };
+// Создание и заполнение массива случайными числами
+    int newarr = 100;
+
+        int[] arr = new int[newarr];
+        Random random = new Random();
+        for (int i = 0; i < newarr; i++)
+        {
+            arr[i] = random.Next(1, newarr);
+        }
 void PrintArray(int[] array)
 {
     int count = array.Length; // определение количества элементов массива
@@ -28,7 +36,8 @@ void SelectionSort(int[] array)
         array[minPosition] = temporaryPosition; //конец сортировки массива по возрастанию
     }
 }
-
+Console.WriteLine ("Неотсортированный массив:");
 PrintArray(arr);
 SelectionSort(arr);
+Console.WriteLine ("Отсортированный массив:");
 PrintArray(arr);
